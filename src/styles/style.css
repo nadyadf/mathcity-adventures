@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -62,32 +63,36 @@ body {
 .app-bar .app-bar__navigation {
   position: absolute;
   top: 50px;
-  right: -180px;
-  width: 150px;
+  right: -190px;
+  width: 170px;
   transition: all 0.3s;
   padding: 8px;
   background-color: var(--orange-middle);
   overflow: hidden;
 }
 
-.app-bar .app-bar_navigation.open {
+.app-bar .app-bar__navigation.open {
   right: 0;
+}
+
+.app-bar .app-bar__navigation ul li {
+  list-style: none;
 }
 
 .app-bar .app-bar__navigation ul li a {
   display: inline-block;
   text-decoration: none;
   color: white;
-  padding: 8px;
+  padding: 12px;
   margin-bottom: 5px;
   width: 100%;
   text-align: center;
 }
 
 .app-bar .app-bar__navigation ul li a:hover {
-  background-color: #f4a261;
-  color: white;
-  font-weight: bold;
+  background-color: var(--bg-body);
+  color: var(--off-black);
+  /* font-weight: bold; */
 }
 
 

@@ -27,4 +27,9 @@
     margin: 0;
     padding: 10px;
   }
+
+  .app-bar .app-bar__navigation ul li a:hover {
+    background-color: var(--bg-body);
+  }
+
 }
