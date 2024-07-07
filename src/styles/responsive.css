@@ -1,0 +1,30 @@
+@media screen and (min-width: 600px) {
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    background-color: var(--bg-body);
+    position: static;
+    width: 100%;
+    padding: 0;
+  }
+
+  .app-bar .app-bar__navigation ul {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    height: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    width: 135px;
+    color: var(--off-black);
+    margin: 0;
+    padding: 10px;
+  }
+}
