@@ -1,3 +1,4 @@
 import 'regenerator-runtime';
-
-console.log('Hellooo');
+import '../styles/variables.css';
+import '../styles/style.css';
+import '../styles/responsive.css';
