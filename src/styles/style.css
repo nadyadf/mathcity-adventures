@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--off-black);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 
+  AppBar
+*/
+
+.app-bar {
+  padding: 5px 10px;
+  background-color: var(--bg-body);
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.app-bar .app-bar__user-identity {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__user-identity .user-identity__photo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #adb5bd;
+}
+
+.app-bar .app-bar__user-identity .user-identity__name {
+  background-color: #ced4da;
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  color: #f4a261;
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  right: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: var(--orange-middle);
+  overflow: hidden;
+}
+
+.app-bar .app-bar_navigation.open {
+  right: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+  background-color: #f4a261;
+  color: white;
+  font-weight: bold;
+}
+
+
+/*
+  Main
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+
+/*
+  Footer
+*/
+
+footer {
+  padding: 5px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 10px;
+}

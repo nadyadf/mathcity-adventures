@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Game matematika dengan konsep perjalanan kota fiksi">
   <link rel="icon" href="./favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
   <title>MathCity Adventures</title>
 </head>
@@ -14,15 +17,28 @@
   </div>
   <header class="app-bar">
     <div class="app-bar__user-identity">
-      <div class="user-identity__photo"></div>
-      <div class="user-identity__name"></div>
+      <div class="user-identity__photo">
+
+      </div>
+      <div class="user-identity__name">{Username}</div>
     </div>
-    <nav id="navigationDrawer" class="app-bar__navigaation">
-      <ul><a href="#/collection">Koleksi</a></ul>
-      <ul><a href="#/leaderboard">Papan Peringkat</a></ul>
+    <div class="app-bar__menu">
+      <button id="humberger-button">☰</button>
+    </div>
+    <nav id="navigationDrawer" class="app-bar__navigation">
+      <ul>
+        <li>
+          <a href="#/collection">Koleksi</a>
+        </li>
+        <li>
+          <a href="#/leaderboard">Papan Peringkat</a>
+        </li>
+      </ul>
     </nav>
   </header>
-  <main id="content">&copy; 2024 Hazelnad. All rights reserved.</main>
-  <footer></footer>
+  <main id="content"></main>
+  <footer>
+    <p>&copy; 2024 MathCity Adventures. Developed with <span style="color: #ffa69e;">❤︎</span> by <span style="color: #9d8189; font-weight: bold;">Hazelnad</span>.</p>
+  </footer>
 </body>
 </html>
