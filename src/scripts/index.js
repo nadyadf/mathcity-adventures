@@ -5,9 +5,15 @@ import '../styles/responsive.css';
 import App from './views/app';
 
 const app = new App({
-  button: document.querySelector('#humberger-button'),
-  drawer: document.querySelector('#navigation-drawer'),
+  button: [
+    document.querySelector('#btn-profile'), 
+    document.querySelector('#humberger-button'),
+    document.querySelector('#btn-logout'),
+  ],
+  drawer: [document.querySelector('.profile-menu'), document.querySelector('#navigation-drawer')],
   content: document.querySelector('#content'),
+  body: document.getElementsByTagName('body')[0],
+  header: document.getElementById('app-bar'),
 });
 
 window.addEventListener('hashchange', () => {

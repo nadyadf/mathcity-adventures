@@ -8,19 +8,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>MathCity Adventures</title>
 </head>
 <body>
-  <div id="login-container">
-
-  </div>
-  <header class="app-bar">
+  <header class="app-bar" id="app-bar">
     <div class="app-bar__user-identity">
-      <div class="user-identity__photo">
-
+      <button id="btn-profile" class="user-identity__photo">
+        <img src="profile-user.png" alt="">
+      </button>
+      <div class="profile-menu">
+        <ul>
+          <li>Nama: Fulan bin fulan</li>
+          <li>Exp: 1253465</li>
+          <li>
+            <button id="btn-logout">Logout</button>
+          </li>
+        </ul>
       </div>
-      <div class="user-identity__name">{Username}</div>
+      <div class="user-identity__name">Fulanah</div>
     </div>
     <div class="app-bar__menu">
       <button id="humberger-button">☰</button>

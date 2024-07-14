@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 * {
   padding: 0;
   margin: 0;
@@ -14,12 +17,16 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none !important; 
+}
+
 /* 
   AppBar
 */
 
 .app-bar {
-  padding: 5px 10px;
+  padding-inline: 10px;
   background-color: var(--bg-body);
   display: flex;
   justify-content: space-between;
@@ -31,6 +38,7 @@ body {
 .app-bar .app-bar__user-identity {
   display: flex;
   align-items: center;
+  margin-top: 5px;
 }
 
 .app-bar .app-bar__user-identity .user-identity__photo {
@@ -38,8 +46,82 @@ body {
   height: 35px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #adb5bd;
+  border: none;
+  cursor: pointer;
+  /* background-color: #adb5bd; */
 }
+
+.user-identity__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 99;
+}
+
+.profile-menu {
+  
+  width: 120px;
+  /* height: 150px; */
+  
+  position: absolute;
+  top: 43px;
+}
+
+.profile-menu ul {
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--orange-middle);
+  display: none;
+
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.profile-menu ul li {
+  list-style: none;
+  font-size: 12px;
+  color: white;
+}
+
+.profile-menu ul li button {
+  margin-top: 20px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #c1121f;
+}
+
+.profile-menu ul li button:hover {
+  background-color: #e5383b;
+}
+
+.profile-menu ul li:nth-child(3) {
+  text-align: center;
+}
+
+.profile-menu.open ul{
+  display: block;
+}
+
+
+@keyframes growDown {
+  0% {
+      transform: scaleY(0)
+  }
+  80% {
+      transform: scaleY(1.1)
+  }
+  100% {
+      transform: scaleY(1)
+  }
+}
+
+
+
 
 .app-bar .app-bar__user-identity .user-identity__name {
   background-color: #ced4da;
@@ -101,7 +183,7 @@ body {
 */
 
 main {
-  padding: 32px;
+  padding: 16px;
   flex: 1;
 }
 
@@ -111,10 +193,206 @@ main {
 */
 
 footer {
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 footer p {
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
+}
+
+/*
+  Login
+*/
+
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri'), url('https://fonts.cdnfonts.com/s/28552/Calibri.ttf') format('truetype');
+}
+
+.login-container {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  /* height: 100%; */
+  /* padding: 8px 15px; */
+}
+
+.login-container img {
+  width: 60%;
+  max-width: 300px;
+  /* margin-block: 25px 40px; */
+}
+
+.login-form {
+  width: 100%;
+  max-width: 550px;
+  padding: 30px;
+  margin-top: 30px;
+  background-image: url(/src/public/bg-city.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 2.5em;
+  font-weight: bold;
+  -webkit-text-stroke: 0.3px var(--primary);
+  font-family: 'Calibri', Arial, sans-serif;
+  text-shadow: 
+                2px 2px 0 rgba(0, 0, 0, 0),   /* Bayangan hitam */
+                -2px -2px 0 rgba(0, 0, 0, 0), 
+                2px -2px 0 rgba(0, 0, 0, 0), 
+                -2px 2px 0 rgba(0, 0, 0, 0), /* Bayangan hitam lainnya */
+                1.5px 1.5px 0 var(--primary);
+}
+
+.input-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* background-color: #adb5bd; */
+}
+
+.input-user input {
+  width: 55%;
+  /* position: relative; */
+  padding: 9px;
+  font-size: 16px;
+  border-radius: 7px;
+  border: 2px solid var(--primary);
+  padding-left: 32px;
+  margin-bottom: 7px;
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+}
+
+.input-user input:nth-child(1) {
+  background-image: url(/src/public/user.png);
+}
+
+.input-user input:nth-child(2) {
+  background-image: url(/src/public/padlock.png);
+}
+
+.login-form i {
+  position: absolute;
+  /* z-index: 99; */
+  /* top: 28px; */
+  /* right: 103px; */
+  left: 10px;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.login-form button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #146C75 0, #264653 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Bona Nova SC",serif;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.login-form button:focus {
+  box-shadow: #264653 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #264653 0 -3px 0 inset;
+}
+
+.login-form button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #264653 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.login-form button:active {
+  box-shadow: #264653 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.signup-offer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-offer p {
+  font-size: 15px;
+}
+
+.signup-offer button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--orange-old);
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,var(--orange-middle) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Bona Nova SC", serif;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  padding-inline: 16px;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.signup-offer button:focus {
+  box-shadow: var(--orange-middle) 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--orange-middle) 0 -3px 0 inset;
+}
+
+.signup-offer button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--orange-middle) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.signup-offer button:active {
+  box-shadow: var(--orange-middle) 0 3px 7px inset;
+  transform: translateY(2px);
 }

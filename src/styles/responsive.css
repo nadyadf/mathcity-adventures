@@ -19,17 +19,54 @@
 
   .app-bar .app-bar__navigation ul li {
     display: inline-block;
+    background-color: var(--orange-light);
   }
 
+
   .app-bar .app-bar__navigation ul li a {
-    width: 135px;
-    color: var(--off-black);
+    /* width: 140px; */
+    color: white;
     margin: 0;
     padding: 10px;
+    font-size: 14px;
+    height: 100%;
   }
 
   .app-bar .app-bar__navigation ul li a:hover {
-    background-color: var(--bg-body);
+    background-color: var(--primary);
+    color: white;
   }
 
+}
+
+@media screen and (min-width: 860px) {
+  main {
+    padding-left: 32px;
+  }
+
+  .login-container {
+    grid-template-columns: 2fr 1fr;
+    /* grid-template-rows: 1fr 4fr; */
+    /* padding: 20px; */
+  }
+
+  .login-container img {
+    grid-row-start: 1; 
+    grid-row-end: 2; 
+    margin-top: 20px;
+  }
+
+  .login-container .signup-offer {
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  .login-form {
+    padding: 40px;
+  }
+
+  .input-user input {
+    padding: 12px;
+    padding-left: 32px;
+  }
 }
