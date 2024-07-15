@@ -10,7 +10,10 @@ const app = new App({
     document.querySelector('#humberger-button'),
     document.querySelector('#btn-logout'),
   ],
-  drawer: [document.querySelector('.profile-menu'), document.querySelector('#navigation-drawer')],
+  drawer: [
+    document.querySelector('.profile-menu'), 
+    document.querySelector('#navigation-drawer'),
+  ],
   content: document.querySelector('#content'),
   body: document.getElementsByTagName('body')[0],
   header: document.getElementById('app-bar'),
