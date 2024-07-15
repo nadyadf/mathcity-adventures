@@ -21,6 +21,11 @@ body {
   display: none !important; 
 }
 
+button {
+  cursor: pointer;
+  border: none;
+}
+
 /* 
   AppBar
 */
@@ -29,6 +34,7 @@ body {
   padding-inline: 10px;
   background-color: var(--bg-body);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
@@ -46,8 +52,9 @@ body {
   height: 35px;
   border-radius: 50%;
   overflow: hidden;
-  border: none;
+  border: 1.5px solid var(--primary);
   cursor: pointer;
+  z-index: 100;
   /* background-color: #adb5bd; */
 }
 
@@ -55,14 +62,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 99;
 }
 
 .profile-menu {
-  
   width: 120px;
-  /* height: 150px; */
-  
   position: absolute;
   top: 43px;
 }
@@ -121,15 +124,21 @@ body {
 }
 
 
-
-
 .app-bar .app-bar__user-identity .user-identity__name {
   background-color: #ced4da;
+  padding: 4px 10px;
+  padding-left: 12px;
+  position: relative;
+  right: 5px;
+  border: 1.5px solid var(--primary);
+  font-size: 15px;
 }
 
 .app-bar .app-bar__menu {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .app-bar .app-bar__menu button {
@@ -140,6 +149,26 @@ body {
   font-weight: bold;
   padding: 8px;
   cursor: pointer;
+}
+
+.app-bar .candy-container {
+  background-color: var(--primary);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border: 1px solid black;
+}
+
+.app-bar .candy-container img {
+  width: 18px;
+  height: 18px;
+}
+
+.app-bar .candy-container p {
+  color: white;
+  font-size: 14px;
 }
 
 .app-bar .app-bar__navigation {
@@ -396,3 +425,162 @@ footer p {
   box-shadow: var(--orange-middle) 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+
+
+/*
+  ---------- LOBBY -------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+.lobby {
+  display: flex;
+  height: 100%;
+}
+
+.city-info {
+  position: absolute;
+  background-color: var(--secondary);
+  top: 40px;
+  left: 13%;
+  display: none;
+  padding: 10px 15px;
+  font-size: 13px;
+  z-index: 99;
+}
+
+.city-info ul li {
+  list-style-type: none;
+  color: white;
+  margin-block: 7px;
+}
+
+
+.city-info ul li span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-city-info {
+  position: absolute;
+  top: 10px;
+  left: 13%;
+  background-color: transparent;
+}
+
+.btn-city-info:hover .city-info {
+  display: block;
+}
+
+.btn-city-info img {
+  width: 30px;
+}
+
+.cities h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+
+.cities .options {
+  margin-top: 30px;
+  display: flex;
+  gap: 7px;
+}
+
+.cities .options button#visit {
+  padding: 10px 15px;
+  background-color: var(--orange-old);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  font-size: 17px;
+}
+
+.cities .options button#visit img {
+  width: 20px;
+}
+
+button#leaderboard {
+  background-color: var(--orange-middle);
+  padding: 4px;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+}
+
+button#leaderboard img {
+  width: 25px;
+  height: 25px;
+}
+
+.city-info button#leaderboard {
+  display: none;
+}
+
+.cities {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-city-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.image-city-slider .city-picture {
+  width: 60%;
+  max-width: 450px;
+  -webkit-mask-image: 
+    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent),
+    linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: 
+    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent),
+    linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: upDown 4s ease-in-out infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.image-city-slider button.arrow {
+  /* padding: 10px; */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+  color: #7f7f7f;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.image-city-slider button.arrow:hover {
+  background-color: var(--orange-light);
+  color: var(--bg-body);
+}
+
