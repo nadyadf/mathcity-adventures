@@ -1,6 +1,6 @@
 import HolderInitiator from "../../utils/holder-initiator";
 import Cities from "../../globals/cities";
-import { createCitySliderTemplate } from "../templates/template-creator";
+import { createCitySliderTemplate, createGreetingBubble } from "../templates/template-creator";
 import Swiper from "../../utils/swiper";
 
 const Lobby = {
@@ -8,7 +8,9 @@ const Lobby = {
     return `
       <div class="lobby">
         
-        <div class="greetings"></div>
+        <div class="greetings">
+          <img src="girl.png" class="char-greeter">
+        </div>
       </div>
     `;
   },
@@ -74,6 +76,10 @@ const Lobby = {
     });
 
 
+    const charGreeter = greetings.querySelector('.char-greeter');
+
+    charGreeter.insertAdjacentHTML('beforebegin', createGreetingBubble('Fulanah'));
+    
   },
 };
 

@@ -45,4 +45,11 @@ const createCitySliderTemplate = (city) => `
   </div>
 `;
 
-export { createCitySliderTemplate };
+const createGreetingBubble = (username) => `
+  <div class="bubble-chat">
+    <img src="bubble.png" >
+    <p>Halo ${username}, ayo jelajahi lebih banyak kota menarik dengan bermain game matematika!</p>
+  </div>
+`;
+
+export { createCitySliderTemplate, createGreetingBubble };
