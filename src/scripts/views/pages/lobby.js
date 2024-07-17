@@ -1,70 +1,78 @@
+import HolderInitiator from "../../utils/holder-initiator";
+import Cities from "../../globals/cities";
+import { createCitySliderTemplate } from "../templates/template-creator";
+import Swiper from "../../utils/swiper";
+
 const Lobby = {
   async render() {
     return `
       <div class="lobby">
-        <div class="cities">
-          <h2 class="title">GreenLand</h2>
-          <div class="image-city-slider">
-            <button class="btn-city-info">
-              <img src="info.png">
-            </button>
-            <div class="city-info">
-              <ul>
-                <li>Nama kota: <span>GreenLand</span></li>
-                <li>Jumlah pengunjung: <span>17</span></li>
-                <li>Peringkatmu: <span>2</span></li>
-                <li>Skor tertinggimu: <span>70</span></li>
-              </ul>
-              <button id="leaderboard" onclick="window.location.href='#/leaderboard'">
-                <img src="podium.png" />
-              </button>
-            </div>
-            <button class="arrow prev">&#10094;</button>
-            <img class="city-picture" src="greenland.png">
-            <button class="arrow next">&#10095;</button>
-          </div>
-          <div class="options">
-            <button id="leaderboard" onclick="window.location.href='#/leaderboard'">
-              <img src="podium.png" />
-            </button>
-            <button role="button" id="visit">
-            Pergi
-            <img src="plane.png" />
-            </button>
-          </div>
-        </div>
+        
         <div class="greetings"></div>
       </div>
     `;
   },
 
   async afterRender() {
-    const btnCityInfo = document.querySelector('.btn-city-info');
-    const cityInfo = document.querySelector('.city-info');
 
-    btnCityInfo.addEventListener('mousedown', (e) => {
-      e.preventDefault();
+    const cities = Cities;
+    const greetings = document.querySelector('.greetings');
+    let currentSlide;
+    let btnPrev;
+    let btnNext;
+    
 
-      cityInfo.style.display = 'block';
+    for (let i = 0; i < cities.length; i++) {
+      greetings.insertAdjacentHTML('beforebegin', createCitySliderTemplate(cities[i]));
+
+      currentSlide = document.querySelectorAll('.slide-wrapper')[i];
+
+      btnPrev = currentSlide.querySelector('.prev');
+      btnNext = currentSlide.querySelector('.next');
+
+      if (i === 0) {
+        btnPrev.style.visibility = 'hidden';
+      } else if (i === cities.length -1) {
+        btnNext.style.visibility = 'hidden';
+      };
+
+      HolderInitiator.init(
+        currentSlide.querySelector('.image-city-slider .btn-city-info'),
+        currentSlide.querySelector('.image-city-slider .city-info'),
+      );
+    }
+
+    const slideWrapper = document.querySelectorAll('.slide-wrapper'); 
+
+    for (let i = 0; i < cities.length; i++) {
+
+      currentSlide = slideWrapper[i];
+      
+
+      // sideCityInfo[i].style.display = 'none';
+      // currentSideInfo.style.display = 'block';
+
+      btnPrev = currentSlide.querySelector('.prev');
+      btnNext = currentSlide.querySelector('.next');
+
+      Swiper.init({
+        slides: slideWrapper,
+        nextEl: btnNext,
+        prevEl: btnPrev,
+        slideIndex: i + 1,
+      });
+    }
+
+    btnPrev = document.querySelector('.prev');
+    btnNext = document.querySelector('.next');
+
+    Swiper.init({
+      slides: slideWrapper,
+      nextEl: btnNext,
+      prevEl: btnPrev,
+      slideIndex: 1,
     });
 
-    btnCityInfo.addEventListener('mouseup', (e) => {
-      e.preventDefault();
-
-      cityInfo.style.display = 'none';
-    });
-
-    btnCityInfo.addEventListener('mouseover', (e) => {
-      e.preventDefault();
-
-      cityInfo.style.display = 'block';
-    });
-
-    btnCityInfo.addEventListener('mouseout', (e) => {
-      e.preventDefault();
-
-      cityInfo.style.display = 'none';
-    });
 
   },
 };
