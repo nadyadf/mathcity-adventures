@@ -5,6 +5,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body {
@@ -55,7 +58,6 @@ button {
   border: 1.5px solid var(--primary);
   cursor: pointer;
   z-index: 100;
-  /* background-color: #adb5bd; */
 }
 
 .user-identity__photo img {
@@ -203,7 +205,6 @@ button {
 .app-bar .app-bar__navigation ul li a:hover {
   background-color: var(--bg-body);
   color: var(--off-black);
-  /* font-weight: bold; */
 }
 
 
@@ -220,10 +221,6 @@ main {
 /*
   Footer
 */
-
-footer {
-  /* padding: 5px; */
-}
 
 footer p {
   text-align: center;
@@ -244,14 +241,11 @@ footer p {
   justify-items: center;
   grid-template-rows: auto 1fr auto;
   width: 100%;
-  /* height: 100%; */
-  /* padding: 8px 15px; */
 }
 
 .login-container img {
   width: 60%;
   max-width: 300px;
-  /* margin-block: 25px 40px; */
 }
 
 .login-form {
@@ -288,7 +282,6 @@ footer p {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  /* background-color: #adb5bd; */
 }
 
 .input-user input {
@@ -315,9 +308,6 @@ footer p {
 
 .login-form i {
   position: absolute;
-  /* z-index: 99; */
-  /* top: 28px; */
-  /* right: 103px; */
   left: 10px;
   color: var(--primary);
   font-size: 18px;
@@ -441,33 +431,71 @@ footer p {
   height: 100%;
 }
 
+.slide-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+}
+
+.side-container {
+  display: none;
+  padding-top: 50px;
+}
+
+.side-container img {
+  width: 40px;
+  margin-bottom: 10px;
+  animation: upDown 3.5s ease-in-out infinite;
+}
+
 .city-info {
-  position: absolute;
   background-color: var(--secondary);
+  padding: 15px 25px;
+  font-size: 14px;
+  width: 220px;
+  border: 1px solid black;
+  height: 300px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.image-city-slider .city-info {
+  position: absolute;
   top: 40px;
   left: 13%;
   display: none;
   padding: 10px 15px;
-  font-size: 13px;
+  height: fit-content;
+  font-size: 11px;
   z-index: 99;
+  box-shadow: none;
 }
 
 .city-info ul li {
   list-style-type: none;
   color: white;
+  font-family: 'Fira Code', monospace;
+  margin-block: 12px;
+}
+
+.image-city-slider .city-info ul li {
   margin-block: 7px;
 }
 
-
 .city-info ul li span {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.image-city-slider .city-info ul li span {
+  font-size: 12px;
 }
 
 .btn-city-info {
   position: absolute;
   top: 10px;
-  left: 13%;
+  left: 12%;
   background-color: transparent;
 }
 
@@ -480,9 +508,16 @@ footer p {
 }
 
 .cities h2 {
-  font-family: "DM Serif Display", serif;
-  font-size: 2.5em;
-  margin-bottom: 15px;
+  font-family: "Acme", serif;
+  font-size: 2.4em;
+  box-sizing: border-box;
+  padding-bottom: 25px;
+  color: #343a40;
+  text-shadow: 0 1px #ced4da, -1px 0 #dee2e6, -1px 2px #ced4da, -2px 1px #dee2e6,
+		-2px 3px #ced4da, -3px 2px #dee2e6, -3px 4px #ced4da, -4px 3px #dee2e6,
+		-4px 5px #ced4da, -5px 4px #dee2e6, -5px 6px #ced4da, -6px 5px #dee2e6;
+	text-align: center;
+  letter-spacing: 1.3px;
 }
 
 
@@ -514,15 +549,20 @@ button#leaderboard {
   border-radius: 6px;
   width: 40px;
   height: 40px;
+  margin-top: 30px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.options button#leaderboard {
+  margin-top: 0;
+  position: static;
 }
 
 button#leaderboard img {
   width: 25px;
   height: 25px;
-}
-
-.city-info button#leaderboard {
-  display: none;
 }
 
 .cities {
@@ -540,12 +580,12 @@ button#leaderboard img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 30px;
 }
 
 .image-city-slider .city-picture {
   width: 60%;
-  max-width: 450px;
+  max-width: 400px;
   -webkit-mask-image: 
     linear-gradient(to bottom, transparent, black 10%, black 90%, transparent),
     linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -554,7 +594,7 @@ button#leaderboard img {
     linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
-  animation: upDown 4s ease-in-out infinite;
+  animation: upDown 3.5s ease-in-out infinite; 
 }
 
 @keyframes upDown {
@@ -562,7 +602,7 @@ button#leaderboard img {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   100% {
     transform: translateY(0);
@@ -574,8 +614,7 @@ button#leaderboard img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 30px;
   color: #7f7f7f;
   background-color: transparent;
   transition: all 0.2s;

@@ -69,4 +69,33 @@
     padding: 12px;
     padding-left: 32px;
   }
+
+  /* LOBBY */
+
+  .image-city-slider .btn-city-info {
+    display: none;
+  }
+
+  .side-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cities {
+    width: fit-content;
+  }
+
+  .image-city-slider .city-picture {
+    max-width: 450px;
+  }
+
+  .options button#leaderboard {
+    display: none;
+  }
+
+  .cities .options button#visit {
+    padding: 12px 30px;
+    font-size: 20px;
+  }
 }
