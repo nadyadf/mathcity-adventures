@@ -5,6 +5,8 @@ const Cities = [
     visitors: 17,
     yourRank: 4,
     yourHighScore: 170,
+    isLocked: false,
+    price: 0,
   },
   {
     cityName: "Marinalia",
@@ -12,6 +14,8 @@ const Cities = [
     visitors: 12,
     yourRank: 3,
     yourHighScore: 120,
+    isLocked: true,
+    price: 500,
   },
   {
     cityName: "Royal City",
@@ -19,6 +23,8 @@ const Cities = [
     visitors: 12,
     yourRank: 3,
     yourHighScore: 120,
+    isLocked: true,
+    price: 750,
   },
   {
     cityName: "Factoria",
@@ -26,6 +32,8 @@ const Cities = [
     visitors: 5,
     yourRank: '-',
     yourHighScore: '-',
+    isLocked: true,
+    price: 920,
   },
   {
     cityName: "Robopolis",
@@ -33,6 +41,8 @@ const Cities = [
     visitors: 5,
     yourRank: '-',
     yourHighScore: '-',
+    isLocked: true,
+    price: 1050,
   },
   {
     cityName: "Malltopia",
@@ -40,6 +50,8 @@ const Cities = [
     visitors: 3,
     yourRank: '-',
     yourHighScore: '-',
+    isLocked: true,
+    price: 1200,
   },
   {
     cityName: "Galaxia",
@@ -47,7 +59,9 @@ const Cities = [
     visitors: 1,
     yourRank: '-',
     yourHighScore: '-',
+    isLocked: true,
+    price: 1500,
   },
-]
+];
 
 export default Cities;

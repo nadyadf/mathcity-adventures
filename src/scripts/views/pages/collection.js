@@ -1,3 +1,5 @@
+import { createButtonBackToLobby } from "../templates/template-creator";
+
 const Collection = {
   async render() {
     return `
@@ -6,7 +8,17 @@ const Collection = {
   },
 
   async afterRender() {
+    const contentContainer = document.querySelector('#content');
 
+    contentContainer.innerHTML = createButtonBackToLobby();
+
+    const btnBackToLobby = document.querySelector('.btn-back-to-lobby');
+
+    btnBackToLobby.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      window.location.href = '/';
+    })
   },
 };
 

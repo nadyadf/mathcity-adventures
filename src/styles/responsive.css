@@ -4,7 +4,7 @@
   }
 
   .app-bar .app-bar__navigation {
-    background-color: var(--bg-body);
+    background-color: transparent;
     position: static;
     width: 100%;
     padding: 0;
@@ -13,12 +13,12 @@
   .app-bar .app-bar__navigation ul {
     display: flex;
     justify-content: end;
-    gap: 10px;
+    gap: 7px;
     height: 100%;
   }
 
   .app-bar .app-bar__navigation ul li {
-    display: inline-block;
+    
     background-color: var(--orange-light);
   }
 
@@ -27,9 +27,11 @@
     /* width: 140px; */
     color: white;
     margin: 0;
-    padding: 10px;
+    padding: 13px;
     font-size: 14px;
     height: 100%;
+    display: flex;
+    gap: 7px;
   }
 
   .app-bar .app-bar__navigation ul li a:hover {
@@ -37,6 +39,17 @@
     color: white;
   }
 
+  .btn-city-info img{
+    width: 40px;
+  }
+
+  .image-city-slider .city-info ul li {
+    font-size: 13px;
+  }
+
+  .image-city-slider .city-info ul li span {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 860px) {
@@ -82,8 +95,27 @@
     align-items: flex-end;
   }
 
+  .city-info {
+    width: 210px;
+    height: 300px;
+    font-size: 14px;
+  }
+
+  .city-info ul li span {
+    font-size: 16px;
+  }
+
+  button#leaderboard {
+    width: 35px;
+    height: 35px;
+  }
+
   .cities {
     width: fit-content;
+  }
+
+  .image-city-slider {
+    gap: 15px;
   }
 
   .image-city-slider .city-picture {
@@ -97,5 +129,57 @@
   .cities .options button#visit {
     padding: 12px 30px;
     font-size: 20px;
+    gap: 10px;
+  }
+
+  .greetings {
+    display: block;
+    width: 20%;
+    height: 100%;
+  }
+
+  .char-greeter {
+    width: 120px;
+  }
+
+  .bubble-chat {
+    width: 170px;
+    height: 120px;
+  }
+
+  .bubble-chat p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .city-info {
+    width: 230px;
+    height: 330px;
+    font-size: 15px;
+  }
+
+  .city-info ul li span {
+    font-size: 17px;
+  }
+
+  button#leaderboard {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bubble-chat {
+    width: 220px;
+    height: 160px;
+  }
+
+  .bubble-chat p {
+    font-size: 14px;
+  }
+
+  .char-greeter {
+    width: 140px;
   }
 }

@@ -22,12 +22,25 @@ const Lobby = {
     let currentSlide;
     let btnPrev;
     let btnNext;
-    
+    let cityPic;
+    let padLock;
+    let btnBuyCity;
+    let btnVisit;
 
     for (let i = 0; i < cities.length; i++) {
       greetings.insertAdjacentHTML('beforebegin', createCitySliderTemplate(cities[i]));
-
+  
       currentSlide = document.querySelectorAll('.slide-wrapper')[i];
+      if (cities[i].isLocked) {
+        cityPic = currentSlide.querySelector('.city-picture');
+        padLock = currentSlide.querySelector('.padlock');
+        btnBuyCity = currentSlide.querySelector('.btn-buy-city');
+        btnVisit = currentSlide.querySelector('button#visit');
+        cityPic.classList.add('lock');
+        btnVisit.classList.add('disabled');
+        padLock.style.display = 'block';
+        btnBuyCity.style.display = 'flex';
+      }
 
       btnPrev = currentSlide.querySelector('.prev');
       btnNext = currentSlide.querySelector('.next');

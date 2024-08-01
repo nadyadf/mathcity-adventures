@@ -17,6 +17,10 @@ const app = new App({
   content: document.querySelector('#content'),
   body: document.getElementsByTagName('body')[0],
   header: document.getElementById('app-bar'),
+  menuItem: [
+    document.querySelectorAll('.app-bar .app-bar__navigation ul li a')[0],
+    document.querySelectorAll('.app-bar .app-bar__navigation ul li a')[1]
+  ]
 });
 
 window.addEventListener('hashchange', () => {

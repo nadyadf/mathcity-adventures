@@ -67,19 +67,26 @@ button {
 }
 
 .profile-menu {
-  width: 120px;
+  width: 130px;
   position: absolute;
   top: 43px;
 }
 
+.profile-menu img {
+  width: 25px;
+  position: relative;
+  bottom: 3px;
+}
+
 .profile-menu ul {
-  padding: 10px;
+  padding: 5px 14px;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--orange-middle);
+  background-color: var(--primary);
   display: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
@@ -89,10 +96,17 @@ button {
   list-style: none;
   font-size: 12px;
   color: white;
+  margin-block: 10px;
+}
+
+.profile-menu ul li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .profile-menu ul li button {
-  margin-top: 20px;
+  margin-top: 12px;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -177,9 +191,9 @@ button {
   position: absolute;
   top: 50px;
   right: -190px;
-  width: 170px;
+  width: 160px;
   transition: all 0.3s;
-  padding: 8px;
+  /* padding: 8px; */
   background-color: var(--orange-middle);
   overflow: hidden;
 }
@@ -190,21 +204,23 @@ button {
 
 .app-bar .app-bar__navigation ul li {
   list-style: none;
+  
 }
 
 .app-bar .app-bar__navigation ul li a {
-  display: inline-block;
+  display: flex;
+  gap: 7px;
   text-decoration: none;
-  color: white;
-  padding: 12px;
-  margin-bottom: 5px;
+  padding: 16px;
   width: 100%;
   text-align: center;
+  color: white;
+  font-size: 13px;
 }
 
 .app-bar .app-bar__navigation ul li a:hover {
-  background-color: var(--bg-body);
-  color: var(--off-black);
+  background-color: var(--primary);
+  /* color: var(--off-black); */
 }
 
 
@@ -303,7 +319,7 @@ footer p {
 }
 
 .input-user input:nth-child(2) {
-  background-image: url(/src/public/padlock.png);
+  background-image: url(/src/public/padlock-small.png);
 }
 
 .login-form i {
@@ -434,17 +450,16 @@ footer p {
 .slide-wrapper {
   width: 100%;
   display: flex;
-  gap: 3em;
   justify-content: center;
 }
 
 .side-container {
   display: none;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .side-container img {
-  width: 40px;
+  width: 35px;
   margin-bottom: 10px;
   animation: upDown 3.5s ease-in-out infinite;
 }
@@ -452,10 +467,7 @@ footer p {
 .city-info {
   background-color: var(--secondary);
   padding: 15px 25px;
-  font-size: 14px;
-  width: 220px;
   border: 1px solid black;
-  height: 300px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
@@ -485,7 +497,7 @@ footer p {
 
 .city-info ul li span {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .image-city-slider .city-info ul li span {
@@ -539,8 +551,22 @@ footer p {
   font-size: 17px;
 }
 
+.cities .options button#visit:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .cities .options button#visit img {
   width: 20px;
+}
+
+.cities .options button#visit.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.cities .options button#visit.disabled:hover {
+  box-shadow: none;
 }
 
 button#leaderboard {
@@ -553,6 +579,11 @@ button#leaderboard {
   position: absolute;
   bottom: 12px;
   right: 12px;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+button#leaderboard:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .options button#leaderboard {
@@ -563,6 +594,7 @@ button#leaderboard {
 button#leaderboard img {
   width: 25px;
   height: 25px;
+  animation: none;
 }
 
 .cities {
@@ -586,12 +618,13 @@ button#leaderboard img {
 .image-city-slider .city-picture {
   width: 60%;
   max-width: 400px;
+  min-width: 280px;
   -webkit-mask-image: 
-    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent),
-    linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    linear-gradient(to bottom, transparent, black 7%, black 90%, transparent),
+    linear-gradient(to right, transparent, black 7%, black 90%, transparent);
   mask-image: 
-    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent),
-    linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    linear-gradient(to bottom, transparent, black 7%, black 90%, transparent),
+    linear-gradient(to right, transparent, black 7%, black 90%, transparent);
   -webkit-mask-composite: destination-in;
   mask-composite: intersect;
   animation: upDown 3.5s ease-in-out infinite; 
@@ -609,6 +642,49 @@ button#leaderboard img {
   }
 }
 
+.city-picture.lock {
+  filter: grayscale(100%);
+  opacity: .7;
+}
+
+img.padlock {
+  position: absolute;
+  width: 10%;
+  /* animation: upDown 3.5s ease-in-out infinite;  */
+  display: none;
+  top: 40%;
+}
+
+.btn-buy-city {
+  position: absolute;
+  bottom: 30%;
+  background-color: #ff686b;
+  color: white;
+  padding: 8px 15px;
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  gap: 2px;
+  border-radius: 5px;
+  transition: all 0.3 ease;
+  font-size: 12px;
+  display: none;
+  font-family: 'Fira Code', monospace;
+}
+
+.btn-buy-city span {
+  font-weight: bold;
+}
+
+.btn-buy-city img {
+  width: 16px;
+}
+
+.btn-buy-city:hover {
+  background-color: #e5383b;
+  transform: scale(1.1);
+}
+
 .image-city-slider button.arrow {
   /* padding: 10px; */
   width: 45px;
@@ -621,7 +697,93 @@ button#leaderboard img {
 }
 
 .image-city-slider button.arrow:hover {
-  background-color: var(--orange-light);
+  background-color: rgba(152, 175, 186, 0.8);
   color: var(--bg-body);
 }
 
+.greetings {
+  display: none;
+}
+
+.char-greeter {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+.bubble-chat {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 120px;
+  right: 120px;
+}
+
+.bubble-chat img {
+  width: 100%;
+  height: 100%;
+}
+
+.bubble-chat p {
+  width: 150px;
+  position: absolute;
+  top: 30px;
+  text-align: center;
+  color: white;
+}
+
+.bubble-chat span {
+  font-weight: bold;
+}
+
+/* Button Back to Lobby */
+
+.btn-back-to-lobby {
+  position: relative;
+  top: 330px;
+  left: 30px;
+  /* padding: 10px 15px; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--orange-middle);
+  color: var(--bg-body);
+  font-size: 16px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  transition-duration: .2s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  padding-left: 10px;
+}
+
+.btn-back-to-lobby i {
+  /* width: 100%; */
+  transition-duration: .2s;
+}
+
+.btn-back-to-lobby p {
+  opacity: 0;
+  position: absolute;
+  width: 220px;
+  right: 0%;
+  transition-duration: .2s;
+  font-size: 12px;
+  display: flex;
+}
+
+.btn-back-to-lobby:hover {
+  width: 170px;
+  border-radius: 40px;
+  padding-right: 10px;
+}
+
+.btn-back-to-lobby:hover p {
+  opacity: 1;
+  width: 70%;
+}
+
+.btn-back-to-lobby:hover i {
+  width: 30%;
+}

@@ -4,12 +4,13 @@ import AuthService from "../utils/auth-service";
 import DrawerInitiator from "../utils/drawer-initiator";
 
 class App {
-  constructor({ button, drawer, content, body, header }) {
+  constructor({ button, drawer, content, body, header, menuItem }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
     this._body = body;
     this._header = header;
+    this._menuItem = menuItem;
     this._authService = new AuthService;
 
     this._initialAppShell();
@@ -20,12 +21,14 @@ class App {
       button: this._button[0],
       drawer: this._drawer[0],
       content: this._content,
+      menuItem: this._menuItem,
     });
 
     DrawerInitiator.init({
       button: this._button[1],
       drawer: this._drawer[1],
       content: this._content,
+      menuItem: this._menuItem,
     });
 
     this._button[2].addEventListener('click', (event) => {

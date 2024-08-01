@@ -29,7 +29,12 @@ const createCitySliderTemplate = (city) => `
           </ul>
         </div>
         <button class="arrow prev" >&#10094</button>
-          <img class="city-picture" src="${city.imgUrl}">
+        <img class="city-picture" src="${city.imgUrl}">
+        <img class="padlock" src="padlock.png">
+        <button class="btn-buy-city">
+          Buka Kota: <span>${city.price}</span>
+          <img src="candy.png">
+        </button>
         <button class="arrow next">&#10095</button>      
       </div>
       <div class="options">
@@ -48,8 +53,15 @@ const createCitySliderTemplate = (city) => `
 const createGreetingBubble = (username) => `
   <div class="bubble-chat">
     <img src="bubble.png" >
-    <p>Halo ${username}, ayo jelajahi lebih banyak kota menarik dengan bermain game matematika!</p>
+    <p>Halo <span>${username}</span>, ayo jelajahi lebih banyak kota menarik dengan bermain game matematika!</p>
   </div>
 `;
 
-export { createCitySliderTemplate, createGreetingBubble };
+const createButtonBackToLobby = () => `
+  <button class="btn-back-to-lobby">
+    <i class="fa-solid fa-house"></i>
+    <p>Kembali ke Lobby</p>
+  </button>
+`;
+
+export { createCitySliderTemplate, createGreetingBubble, createButtonBackToLobby };
