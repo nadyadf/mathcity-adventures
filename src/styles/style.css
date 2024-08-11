@@ -229,8 +229,9 @@ button {
 */
 
 main {
-  padding: 16px;
+  padding: 10px;
   flex: 1;
+  overflow: hidden;
 }
 
 
