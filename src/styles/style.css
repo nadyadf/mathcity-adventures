@@ -239,6 +239,12 @@ main {
   Footer
 */
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 footer p {
   text-align: center;
   font-size: 9px;
