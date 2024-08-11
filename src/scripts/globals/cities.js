@@ -1,6 +1,6 @@
 const Cities = [
   {
-    cityName: "GreenLand",
+    cityName: "Green Land",
     imgUrl: 'greenland.png',
     visitors: 17,
     yourRank: 4,
