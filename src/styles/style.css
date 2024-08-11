@@ -193,7 +193,6 @@ button {
   right: -190px;
   width: 160px;
   transition: all 0.3s;
-  /* padding: 8px; */
   background-color: var(--orange-middle);
   overflow: hidden;
 }
@@ -220,7 +219,6 @@ button {
 
 .app-bar .app-bar__navigation ul li a:hover {
   background-color: var(--primary);
-  /* color: var(--off-black); */
 }
 
 
@@ -309,7 +307,6 @@ footer p {
 
 .input-user input {
   width: 55%;
-  /* position: relative; */
   padding: 9px;
   font-size: 16px;
   border-radius: 7px;
@@ -586,7 +583,6 @@ button#leaderboard {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  /* transition: all 0.3s ease-in-out; */
 }
 
 button#leaderboard:hover {
@@ -657,7 +653,6 @@ button#leaderboard img {
 img.padlock {
   position: absolute;
   width: 10%;
-  /* animation: upDown 3.5s ease-in-out infinite;  */
   display: none;
   top: 40%;
 }
@@ -669,7 +664,6 @@ img.padlock {
   color: white;
   padding: 8px 15px;
   display: flex;
-  /* justify-content: flex-end; */
   align-items: flex-end;
   gap: 2px;
   border-radius: 5px;
@@ -693,7 +687,6 @@ img.padlock {
 }
 
 .image-city-slider button.arrow {
-  /* padding: 10px; */
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -749,7 +742,6 @@ img.padlock {
   position: relative;
   top: 330px;
   left: 30px;
-  /* padding: 10px 15px; */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -766,7 +758,6 @@ img.padlock {
 }
 
 .btn-back-to-lobby i {
-  /* width: 100%; */
   transition-duration: .2s;
 }
 
@@ -811,7 +802,6 @@ img.padlock {
 .gallery__title-container {
   display: flex;
   justify-content: space-between;
-  /* margin-top: 40px; */
   width: 100%;
   max-width: 900px;
 }
@@ -895,8 +885,6 @@ img.padlock {
 
 .category-cards-container .label {
   display: flex;                         
-  /* justify-content: center; */
-  /* height: 10px; */
   position: absolute;
   top: -14px;
   left: -5px;
