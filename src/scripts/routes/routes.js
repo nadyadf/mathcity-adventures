@@ -1,4 +1,4 @@
-import Collection from "../views/pages/collection";
+import Gallery from "../views/pages/gallery";
 import Leaderboard from "../views/pages/leaderboard";
 import Lobby from "../views/pages/lobby";
 import Login from "../views/pages/login";
@@ -7,7 +7,7 @@ import SignUp from "../views/pages/sign-up";
 
 const routes = {
   '/': Lobby,
-  '/collection': Collection,
+  '/collection': Gallery,
   '/leaderboard': Leaderboard,
   '/profile': Profile,
   '/login': Login,
