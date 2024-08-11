@@ -64,4 +64,32 @@ const createButtonBackToLobby = () => `
   </button>
 `;
 
-export { createCitySliderTemplate, createGreetingBubble, createButtonBackToLobby };
+const createCategoryCardsContainer = (cityName) => `
+  <div class="category-cards-container">
+    <div class="label">
+      <span></span>
+      <p class="gallery__category-title">
+        ${cityName}
+      </p>
+    </div>
+    <div class="wrapper"></div>
+  </div>
+`;
+
+const createEmptyCard = () => `
+  <div class="gallery__empty-card">
+    <img class="question-mark" src="question-mark.png" >
+  </div>
+`;
+
+const createGalleryCard = (spots) => `
+  <div class="gallery__card">
+    <img class="badge-card" src="gallery-card.png">
+    <div class="gallery__card-content">
+      <img src="./secret-spots/${spots.imgUrl}" >
+      <p>${spots.spotName}</p>
+    </div>
+  </div>
+`
+
+export { createCitySliderTemplate, createGreetingBubble, createButtonBackToLobby, createCategoryCardsContainer, createEmptyCard, createGalleryCard };
