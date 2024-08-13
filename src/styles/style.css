@@ -42,6 +42,8 @@ button {
   position: sticky;
   top: 0;
   z-index: 99;
+  /* border-bottom: 1px solid var(--orange-light); */
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
 }
 
 .app-bar .app-bar__user-identity {
@@ -51,25 +53,28 @@ button {
 }
 
 .app-bar .app-bar__user-identity .user-identity__photo {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   overflow: hidden;
   border: 1.5px solid var(--primary);
   cursor: pointer;
   z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .user-identity__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
 }
 
 .profile-menu {
-  width: 130px;
+  width: 180px;
   position: absolute;
   top: 43px;
+  z-index: 999;
 }
 
 .profile-menu img {
@@ -84,34 +89,52 @@ button {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--primary);
+  background-color: var(--orange-light);
+  border-radius: 4px;
   display: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
+  
 }
 
 .profile-menu ul li {
   list-style: none;
   font-size: 12px;
-  color: white;
+  padding: 7px;
+  color: var(--primary);
   margin-block: 10px;
+}
+
+.user-info {
+  border: 1.5px solid var(--primary);
+  background-color: var(--bg-body);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.user-info .exp {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .profile-menu ul li:nth-child(2) {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  justify-content: flex-end;
 }
 
 .profile-menu ul li button {
-  margin-top: 12px;
+  margin-top: 15px;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   color: white;
   background-color: #c1121f;
+  font-size: 11px;
+  border-radius: 3px;
 }
 
 .profile-menu ul li button:hover {
@@ -142,12 +165,17 @@ button {
 
 .app-bar .app-bar__user-identity .user-identity__name {
   background-color: #ced4da;
+  background-color: var(--orange-light);
   padding: 4px 10px;
   padding-left: 12px;
   position: relative;
   right: 5px;
   border: 1.5px solid var(--primary);
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.user-identity__photo, .user-identity__name, .candy-container {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .app-bar .app-bar__menu {
@@ -161,7 +189,7 @@ button {
   background-color: transparent;
   border: none;
   font-size: 22px;
-  color: #f4a261;
+  color: var(--orange-light);
   font-weight: bold;
   padding: 8px;
   cursor: pointer;
@@ -172,28 +200,32 @@ button {
   display: flex;
   gap: 7px;
   align-items: center;
-  padding: 5px 10px;
+  padding: 3px 10px;
   margin-top: 5px;
-  border: 1px solid black;
+  margin-left: 5px;
+  border: 1.7px solid var(--primary);
+  border-radius: 3px;
 }
 
 .app-bar .candy-container img {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .app-bar .candy-container p {
+  color: var(--primary);
   color: white;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .app-bar .app-bar__navigation {
   position: absolute;
   top: 50px;
   right: -190px;
-  width: 160px;
+  width: 175px;
   transition: all 0.3s;
-  background-color: var(--orange-middle);
+  background-color: var(--orange-light);
   overflow: hidden;
 }
 
@@ -203,7 +235,6 @@ button {
 
 .app-bar .app-bar__navigation ul li {
   list-style: none;
-  
 }
 
 .app-bar .app-bar__navigation ul li a {
@@ -214,11 +245,11 @@ button {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .app-bar .app-bar__navigation ul li a:hover {
-  background-color: var(--primary);
+  color: var(--primary);
 }
 
 
@@ -455,17 +486,29 @@ footer p {
   width: 100%;
   display: flex;
   justify-content: center;
+  gap: 5px;
 }
 
 .side-container {
   display: none;
   padding-top: 30px;
+  
 }
 
 .side-container img {
   width: 35px;
   margin-bottom: 10px;
   animation: upDown 3.5s ease-in-out infinite;
+}
+
+.cities {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .city-info {
@@ -553,10 +596,12 @@ footer p {
   gap: 8px;
   border-radius: 6px;
   font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .cities .options button#visit:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  opacity: .8;
 }
 
 .cities .options button#visit img {
@@ -564,7 +609,8 @@ footer p {
 }
 
 .cities .options button#visit.disabled {
-  background-color: #6c757d;
+  background-color: #adb5bd;
+  box-shadow: none;
   cursor: not-allowed;
   opacity: .6;
 }
@@ -600,28 +646,18 @@ button#leaderboard img {
   animation: none;
 }
 
-.cities {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .image-city-slider {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  /* gap: 20px; */
 }
 
 .image-city-slider .city-picture {
   width: 60%;
   max-width: 400px;
-  min-width: 280px;
+  min-width: 300px;
   -webkit-mask-image: 
     linear-gradient(to bottom, transparent, black 7%, black 90%, transparent),
     linear-gradient(to right, transparent, black 7%, black 90%, transparent);
@@ -656,7 +692,6 @@ img.padlock {
   display: none;
   top: 40%;
 }
-
 .btn-buy-city {
   position: absolute;
   bottom: 30%;
@@ -671,6 +706,26 @@ img.padlock {
   font-size: 12px;
   display: none;
   font-family: 'Fira Code', monospace;
+  animation: shake 4s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
 }
 
 .btn-buy-city span {
@@ -684,6 +739,7 @@ img.padlock {
 .btn-buy-city:hover {
   background-color: #e5383b;
   transform: scale(1.1);
+  animation: none;
 }
 
 .image-city-slider button.arrow {
@@ -691,14 +747,15 @@ img.padlock {
   height: 45px;
   border-radius: 50%;
   font-size: 30px;
-  color: #7f7f7f;
+  color: #adb5bd;
   background-color: transparent;
   transition: all 0.2s;
 }
 
 .image-city-slider button.arrow:hover {
-  background-color: rgba(152, 175, 186, 0.8);
+  /* background-color: rgba(152, 175, 186, 0.8); */
   color: var(--bg-body);
+  color: #6c757d;
 }
 
 .greetings {
@@ -708,7 +765,7 @@ img.padlock {
 .char-greeter {
   position: absolute;
   bottom: 0;
-  right: 30px;
+  right: 60px;
 }
 
 .bubble-chat {
@@ -716,7 +773,7 @@ img.padlock {
   display: flex;
   justify-content: center;
   bottom: 120px;
-  right: 120px;
+  right: 150px;
 }
 
 .bubble-chat img {
@@ -739,32 +796,36 @@ img.padlock {
 /* Button Back to Lobby */
 
 .btn-back-to-lobby {
-  position: relative;
-  top: 330px;
+  position: absolute;
+  bottom: 30px;
   left: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--orange-middle);
+  justify-content: center;
+  background-color: var(--orange-old);
   color: var(--bg-body);
   font-size: 16px;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   overflow: hidden;
   transition-duration: .2s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  padding-left: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  /* padding-left: 10px; */
+  z-index: 999;
 }
 
 .btn-back-to-lobby i {
   transition-duration: .2s;
+  font-size: 18px;
 }
 
 .btn-back-to-lobby p {
   opacity: 0;
   position: absolute;
-  width: 220px;
   right: 0%;
   transition-duration: .2s;
   font-size: 12px;
@@ -772,7 +833,8 @@ img.padlock {
 }
 
 .btn-back-to-lobby:hover {
-  width: 170px;
+  justify-content: flex-start;
+  width: 160px;
   border-radius: 40px;
   padding-right: 10px;
 }
@@ -796,14 +858,14 @@ img.padlock {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .gallery__title-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 900px;
+  max-width: 950px;
 }
 
 .gallery__title-decor {
@@ -811,20 +873,19 @@ img.padlock {
 }
 
 .gallery__title-decor img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 35px;
 }
 
 .gallery__title-container p {
   border-bottom: 1.5px solid black;
   width: 100%;
   text-align: center;
-  line-height: 130%;
+  line-height: 240%;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: .5px;
 }
-
 
 .gallery__cards-container {
   margin-top: 16px;
@@ -833,10 +894,11 @@ img.padlock {
   padding-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
   overflow-x: hidden;
   width: 100%;
+  gap: 30px;
+  max-width: 950px;
 }
 
 .gallery__cards-container::-webkit-scrollbar-track {
@@ -852,7 +914,7 @@ img.padlock {
 
 .gallery__cards-container::-webkit-scrollbar-thumb
 {
-	background-color: #e76f51;	
+	background-color: var(--primary);	
 	background-image: -webkit-linear-gradient(45deg,
 	                                          rgba(255, 255, 255, .2) 25%,
 											  transparent 25%,
@@ -869,7 +931,7 @@ img.padlock {
   position: relative;
   align-self: auto;
   width: 100%;
-  max-width: 900px;
+  
   
 }
 
@@ -884,11 +946,11 @@ img.padlock {
 }
 
 .category-cards-container .label {
-  display: flex;                         
+  display: flex;
   position: absolute;
   top: -14px;
   left: -5px;
-  z-index: 99;
+  z-index: 1;
 }
 
 .category-cards-container .label span, .gallery__category-title {
@@ -916,8 +978,8 @@ img.padlock {
 }
 
 .gallery__card .badge-card, .gallery__empty-card {
-  width: 125px;
-  height: 160px;
+  max-width: 145px;
+  height: 180px;
 }
 
 .gallery__card .badge-card {
@@ -937,12 +999,12 @@ img.padlock {
 
 .gallery__card-content img {
   width: 95%;
-  border: 1.2px solid var(--orange-light);
+  border: 2px solid var(--orange-light);
   border-radius: 2px;
 }
 
 .gallery__card-content p {
-  font-size: 10px;
+  font-size: 12px;
   color: white;
   text-align: center;
   height: 100%;
