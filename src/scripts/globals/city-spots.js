@@ -21,6 +21,37 @@ const CitySpots = [
       {
         imgUrl: 'jalan-kaspia.jpg',
         spotName: 'Jalan Kaspia',
+        type: 'basic',
+      },
+    ],
+  },
+  {
+    cityName: 'Marinalia',
+    spots: [
+      {
+        imgUrl: 'dapoer-samudra.jpg',
+        spotName: 'Dapoer Samudra',
+        type: 'advanced',
+      },
+      {
+        imgUrl: 'kawasan-pesona-laut.jpg',
+        spotName: 'Kawasan Pesona Laut',
+        type: 'basic',
+      },
+      {
+        imgUrl: 'ocean-eye.jpg',
+        spotName: 'Ocean Eye',
+        type: 'basic',
+      },
+      {
+        imgUrl: 'pasar-bahari.jpg',
+        spotName: 'Pasar Bahari',
+        type: 'basic',
+      },
+      {
+        imgUrl: 'pelabuhan-harbor.jpg',
+        spotName: 'Pelabuhan Harbor',
+        type: 'basic',
       },
     ],
   },
