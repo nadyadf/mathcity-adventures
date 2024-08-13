@@ -1,6 +1,11 @@
 @media screen and (min-width: 576px) {
+  
   .app-bar .app-bar__menu {
     display: none;
+  }
+
+  .profile-menu ul li button {
+    font-size: 12px;
   }
 
   .app-bar .app-bar__navigation {
@@ -19,24 +24,24 @@
 
   .app-bar .app-bar__navigation ul li {
     
-    background-color: var(--orange-light);
+    /* background-color: var(--orange-light); */
+
   }
 
 
   .app-bar .app-bar__navigation ul li a {
-    /* width: 140px; */
-    color: white;
+    color: var(--orange-light);
     margin: 0;
     padding: 13px;
-    font-size: 14px;
+    font-size: 12px;
     height: 100%;
     display: flex;
     gap: 7px;
   }
 
   .app-bar .app-bar__navigation ul li a:hover {
-    background-color: var(--primary);
-    color: white;
+    background-color: transparent;
+    color: var(--primary);
   }
 
   .btn-city-info img{
@@ -51,29 +56,73 @@
     font-size: 15px;
   }
 
+  .gallery__category-title {
+    font-size: 14px;
+    width: 100px;
+  }
+
   .category-cards-container .wrapper {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
   }
 
   .gallery__cards-container {
-    gap: 25px;
+    gap: 40px;
   }
-}
 
-@media screen and (min-width: 768px) {
   .gallery__title-decor img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
   }
 
   .gallery__title-container p {
-    font-size: 20px;
-    line-height: 270%;
+    font-size: 18px;
+    line-height: 240%;
   }
 
-  .gallery__category-title {
-    font-size: 16px;
-    width: 110px;
+  
+}
+
+@media screen and (min-width: 768px) {
+
+  .app-bar .app-bar__user-identity .user-identity__photo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .app-bar .app-bar__user-identity .user-identity__name {
+    font-size: 15px;
+  }
+
+  .app-bar .candy-container img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .app-bar .candy-container p {
+    font-size: 14px;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    font-size: 13px;
+  }
+
+  .btn-back-to-lobby {
+    height: 50px;
+    width: 50px;
+  }
+
+  .gallery__title-decor img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .gallery__title-container p {
+    font-size: 22px;
+    line-height: 220%;
+  }
+
+  .category-cards-container .wrapper {
+    grid-template-columns: repeat(4, auto);
   }
 
   .gallery__card .badge-card, .gallery__empty-card {
@@ -132,10 +181,14 @@
     align-items: flex-end;
   }
 
+  .cities {
+    width: fit-content;
+  }
+
   .city-info {
     width: 210px;
     height: 300px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .city-info ul li span {
@@ -147,12 +200,9 @@
     height: 35px;
   }
 
-  .cities {
-    width: fit-content;
-  }
-
   .image-city-slider {
-    gap: 15px;
+    gap: 20px;
+    width: min-content;
   }
 
   .image-city-slider .city-picture {
@@ -186,6 +236,15 @@
 
   .bubble-chat p {
     font-size: 11px;
+  }
+
+  .gallery__title-decor img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .gallery__title-decor p {
+    line-height: 220%;
   }
 
   .category-cards-container .wrapper {
@@ -233,6 +292,23 @@
 
   .char-greeter {
     width: 140px;
+  }
+
+  .btn-back-to-lobby p {
+    font-size: 14px;
+  }
+
+  .btn-back-to-lobby:hover {
+    width: 190px;
+  }
+
+  .gallery__title-decor img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gallery__title-decor p {
+    line-height: 220%;
   }
 
   .gallery__title-container p {
