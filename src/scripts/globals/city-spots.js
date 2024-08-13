@@ -5,18 +5,22 @@ const CitySpots = [
       {
         imgUrl: 'taman-lumina.jpg',
         spotName: 'Taman Lumina',
+        type: 'advanced',
       },
       {
         imgUrl: 'rumah-pohon-horizon.jpg',
         spotName: 'Rumah Pohon Horizon',
+        type: 'basic',
       },
       {
         imgUrl: 'kanal-serenity.jpg',
         spotName: 'Kanal Serenity',
+        type: 'basic',
       },
       {
         imgUrl: 'jembatan-evergreen.jpg',
         spotName: 'Jembatan Ever Green',
+        type: 'basic',
       },
       {
         imgUrl: 'jalan-kaspia.jpg',
