@@ -15,7 +15,7 @@ const CitySpots = [
         spotName: 'Kanal Serenity',
       },
       {
-        imgUrl: 'jembatan-ever-green.jpg',
+        imgUrl: 'jembatan-evergreen.jpg',
         spotName: 'Jembatan Ever Green',
       },
       {
