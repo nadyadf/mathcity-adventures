@@ -3,3 +3,6 @@ node_modules/
 
 # Dependency lockfiles
 *.lock
+
+# credential
+.env
