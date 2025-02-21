@@ -2359,9 +2359,17 @@ img.padlock {
   position: relative;
 }
 
-.calc-result .number-buttons .finger-container {
+.finger-container {
   position: absolute;
   animation: upDown 1.5s ease-in-out infinite;
+  z-index: 99;
+  pointer-events: none;
+  width: 40px;
+  top: 30px;
+}
+
+.finger-container img {
+  width: 100%;
 }
 
 @keyframes upDown {
@@ -2401,6 +2409,10 @@ img.padlock {
   background-color: transparent;
 }
 
+.btn-fraction img {
+  pointer-events: none;
+}
+
 .btn-fraction.active {
   background-color: rgb(84, 130, 53, .5) !important;
 }
@@ -2422,6 +2434,11 @@ img.padlock {
   display: block;
 }
 
+.first-fraction__denominator, .second-number {
+  position: relative;
+  /* pointer-events: none; */
+}
+
 .first-fraction, .second-fraction {
   height: 25px !important;
 }
@@ -2432,15 +2449,21 @@ img.padlock {
   background-color: black;
 }
 
-.btn-submit-result {
+.btn-submit-result__container {
+  position: relative;
+  margin-top: 20px;
+}
+
+button.btn-submit-result {
   padding: 7px 15px;
   background-color: #adb5bd;
   color: #6c757d;
   border-radius: 5px;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
-  margin-top: 20px;
+  
   pointer-events: none;
+  /* position: absolute; */
 }
 
 .btn-submit-result.active {
@@ -2491,6 +2514,8 @@ img.padlock {
   background-color: #ced4da;
   pointer-events: none;
 }
+
+
 
 .number-buttons.fr-result .btn-fraction:hover {
   background-color: #ced4da;

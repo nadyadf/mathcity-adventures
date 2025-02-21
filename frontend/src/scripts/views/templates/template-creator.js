@@ -230,10 +230,14 @@ const fractionMultiplication = () => {
         <div class="fraction-container first">
           <input class="first-fraction number-input" id="numerator" max-length="2" autocomplete="off">
           <div class="fraction-line"></div>
-          <input class="first-fraction number-input" id="denominator" autocomplete="off">
+          <div class="first-fraction__denominator">
+            <input class="first-fraction first-fraction__denominator number-input" id="denominator" autocomplete="off">
+          </div>
         </div>
         <p class="operator">x</p>
-        <input id="secondNum" class="show number-input" maxlength="2" autocomplete="off">
+        <div class="second-number">
+          <input id="secondNum" class="show number-input second-number" maxlength="2" autocomplete="off">
+        </div>
         <div class="fraction-container second">
           <input class="second-fraction number-input" id="numerator" max-length="2" autocomplete="off">
           <div class="fraction-line"></div>
@@ -248,20 +252,17 @@ const fractionMultiplication = () => {
         <button class="btn-fraction" id="fractionMode">
           <img src="math.png">
         </button>
-        <button>4</button>
+        <button>4
         <button>5</button>
         <button>6</button>
         <button>0</button>
         <button>1</button>
-        <button>
-          2
-          <div class="finger-container">
-            <img src="point.png">
-          </div>
-        </button>
+        <button>2</button>
         <button>3</button>
       </div>
-      <button class="btn-submit-result" id="btnSubmitResult">Lanjut</button>
+      <div class="btn-submit-result__container">
+        <button class="btn-submit-result" id="btnSubmitResult">Lanjut</button>
+      </div>
     </div>`,
     // setup: () => fractionMultiplicationHandler.init()
   }
@@ -289,7 +290,9 @@ const resultFractionMultiplication = (mainId, currentStep) => {
           <div class="fraction-container">
             <input class="first-fraction initial-focus number-input show" id="numerator" max-length="2" autocomplete="off">
             <div class="fraction-line"></div>
-            <input class="first-fraction number-input show" id="denominator" autocomplete="off">
+            <div class="first-fraction__denominator">
+              <input class="first-fraction number-input show first-fraction__denominator" id="denominator" autocomplete="off">
+            </div>
           </div>
         </div>
       </div>
@@ -308,7 +311,9 @@ const resultFractionMultiplication = (mainId, currentStep) => {
         <button>2</button>
         <button>3</button>
       </div>
-      <button class="btn-submit-result" id="btnSubmitResult">Lanjut</button>
+      <div class="btn-submit-result__container">
+        <button class="btn-submit-result" id="btnSubmitResult">Lanjut</button>
+      </div>
     </div>`,
     // setup: () => fractionMultiplicationHandler.init()
   }
@@ -342,15 +347,15 @@ const fractionAbilityToSimplify = (mainId, currentStep) => {
         </span>
       </div>
       <div class="answer-choices">
-        <button>
+        <button class="yes">
           <img class="flower" src="flower.png">
           <span class="alphabet">A.</span>
-          ${choicesAnswer[0].answer}
+          <p>${choicesAnswer[0].answer}</p>
         </button>
-        <button>
+        <button class="no">
           <img class="flower" src="flower.png">
           <span class="alphabet">B.</span>
-          ${choicesAnswer[1].answer}
+          <p>${choicesAnswer[1].answer}</p>
         </button>
       </div>
     `
@@ -411,12 +416,12 @@ const illustrationChoices = (mainId, currentStep) => {
   }
 }
 
-const fingerPointer = () => `
+const createFingerPointer = () => `
   <div class="finger-container">
     <img src="point.png">
   </div>
 `;
 
 
-export { createCitySliderTemplate, createGreetingBubble, createButtonBackToLobby, createCategoryCardsContainer, createEmptyCard, createGalleryCard, createRankingRow, createPurchaseConfirmationModal, createSettingsModal, createButtonLevel, createMainQuiz, createSubQuiz, fractionMultiplication, createResultQuiz, resultFractionMultiplication, fractionAbilityToSimplify, illustrationChoices };
+export { createCitySliderTemplate, createGreetingBubble, createButtonBackToLobby, createCategoryCardsContainer, createEmptyCard, createGalleryCard, createRankingRow, createPurchaseConfirmationModal, createSettingsModal, createButtonLevel, createMainQuiz, createSubQuiz, fractionMultiplication, createResultQuiz, resultFractionMultiplication, fractionAbilityToSimplify, illustrationChoices, createFingerPointer };
 

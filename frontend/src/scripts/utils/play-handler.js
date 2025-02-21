@@ -1,5 +1,6 @@
 import quizOption from "../globals/quiz-option";
 import Play from "../views/pages/play";
+import TutorialHandler from "./tutorial-handler";
 
 
 
@@ -20,6 +21,7 @@ const calcHandler = () => {
   numberButtons.forEach(btn => {
     btn.addEventListener('mousedown', (e) => {
       e.preventDefault();
+      console.log('tombol terklik')
       if (!btn.hasAttribute('id')) {
         const number = btn.textContent;
         insertTextAtCursor(number);
@@ -64,7 +66,6 @@ const areAllInputsFilledIn = () => {
   const btnSubmitResult = document.querySelector('#btnSubmitResult');
   const numberOfInputs = numberInputs.length;
   let filledInput = 0
-
 
   numberInputs.forEach(input => {
     if (input.value.length >= 1) {
@@ -162,12 +163,13 @@ const insertTextAtCursor = (text) => {
   if (activeInput.tagName === 'INPUT' && activeInput.value.length < 2) {
     const cursorPosition = activeInput.selectionStart; 
     const currentText = activeInput.value;
+
     
     const beforeCursor = currentText.substring(0, cursorPosition);
     const afterCursor = currentText.substring(cursorPosition);
 
     
-    activeInput.value = beforeCursor + text + afterCursor;
+    activeInput.value = beforeCursor + text.trim() + afterCursor;
 
     activeInput.setSelectionRange(cursorPosition + text.length, cursorPosition + text.length);
 
@@ -222,18 +224,15 @@ const openImageDetail = () => {
   });
 }
 
-const showFingerPoints = (mainId, step) => {
-  const fingerElement = document.querySelectorAll('.finger-container');
-
-  const stepQuiz = quizOption.find(sub => sub.mainQuizId === mainId && sub.subQuizId === step)
+const showPointer = (mainId, step, templateName) => {
+  const stepQuiz = quizOption.find(sub => sub.mainQuizId === mainId && sub.subQuizId === step);
 
   const correctAnswer = stepQuiz.choices.find(opt => opt.isCorrect === true);
 
-  console.log(correctAnswer);
+  const tutorHandler = TutorialHandler.find(handler => handler.name === templateName);
 
-  if (mainId === 1) {
-    
-  }
+  tutorHandler.show(correctAnswer.answer);
+
 }
 
-export { numberInputValidation, insertTextAtCursor, areAllInputsFilledIn, deleteNumberInput, toggleFractionMode, calcHandler, fractionToggler, submitStepHandler, multiChoicesHandler, openImageDetail, showFingerPoints };
+export { numberInputValidation, insertTextAtCursor, areAllInputsFilledIn, deleteNumberInput, toggleFractionMode, calcHandler, fractionToggler, submitStepHandler, multiChoicesHandler, openImageDetail, showPointer };

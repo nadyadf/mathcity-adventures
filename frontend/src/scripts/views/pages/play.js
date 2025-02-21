@@ -4,7 +4,7 @@ import quizOption from "../../globals/quiz-option";
 import UrlParser from "../../routes/url-parser";
 import generateQuiz from "../../utils/generate-quiz";
 import HeaderController from "../../utils/header-controller";
-import { showFingerPoints } from "../../utils/play-handler";
+import { showPointer } from "../../utils/play-handler";
 import { createMainQuiz, createResultQuiz, createSubQuiz } from "../templates/template-creator";
 
 const Play = {
@@ -129,6 +129,7 @@ const Play = {
 
     if (step === 1) {
       quizWrapper.innerHTML += createSubQuiz(step, question) + answerTemplate.htmlElement;
+      
     } else {
       const stepLabel = document.querySelector('.sub-quiz h2')
       const questionWrapper = document.querySelector('.sub-quiz p');
@@ -138,25 +139,33 @@ const Play = {
       resultContainer.innerHTML = answerTemplate.htmlElement;
     }
 
+    
     const focusInput = document.querySelector('.initial-focus');
     focusInput?.focus();
 
+    if (mainId === 1) {
+      showPointer(mainId, step, templateName);
+    }
+
+    
     this.gameHandler(mainId, stepQuiz, stepId)
+    
   },
 
   gameHandler(mainId, stepQuiz, step) {
     const currentStep = stepQuiz.find(quiz => quiz.step === step);
     const stepHandler = currentStep.functionHandler;
+    const templateName = currentStep.answerTemplateName;
 
     stepHandler.forEach(handler => {
       functionMap[handler](mainId, stepQuiz, step)
     });
 
-    if (mainId === 1) {
-      showFingerPoints(mainId, step)
-    }
+    
+
   },
 
+  // Untuk mengecek step ke 4
   stepChecker(mainId, step) {
     if (mainId === 1 && step !== 4) {
       return step;
